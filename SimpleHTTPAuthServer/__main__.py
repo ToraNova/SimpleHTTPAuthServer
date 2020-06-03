@@ -34,14 +34,14 @@ class SimpleHTTPAuthHandler(SimpleHTTPRequestHandler):
 
     def do_HEAD(self):
         ''' head method '''
-        print("send header")
+        #print("send header")
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
 
     def do_authhead(self):
         ''' do authentication '''
-        print("send header")
+        #print("send header")
         self.send_response(401)
         self.send_header('WWW-Authenticate', 'Basic realm=\"Test\"')
         self.send_header('Content-type', 'text/html')
@@ -56,8 +56,9 @@ class SimpleHTTPAuthHandler(SimpleHTTPRequestHandler):
             SimpleHTTPRequestHandler.do_GET(self)
         else:
             self.do_authhead()
-            self.wfile.write(self.headers.get('Authorization'))
-            self.wfile.write(b'not authenticated')
+            self.wfile.write(
+                    self.headers.get('Authorization').encode('utf-8'))
+            self.wfile.write(b' not authenticated')
 
 def serve_https(https_port=80, https=True, start_dir=None, handler_class=SimpleHTTPAuthHandler):
     ''' setting up server '''
