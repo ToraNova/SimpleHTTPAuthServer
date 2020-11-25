@@ -1,4 +1,4 @@
-# SimpleHTTPAuthServer
+# SimpleHTTPAuthServer (Python3 Fork)
 [![Build Status](https://travis-ci.org/tianhuil/SimpleHTTPAuthServer.svg?branch=master)](https://travis-ci.org/tianhuil/SimpleHTTPAuthServer)
 [![PyPI version](https://badge.fury.io/py/SimpleHTTPAuthServer.svg)](https://badge.fury.io/py/SimpleHTTPAuthServer)
 
